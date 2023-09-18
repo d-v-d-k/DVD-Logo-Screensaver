@@ -1,0 +1,9 @@
+D:\Visual Studio\ScreenSaver\ScreenSaver\bin\Debug\ScreenSaver.exe
+D:\Visual Studio\ScreenSaver\ScreenSaver\bin\Debug\ScreenSaver.pdb
+D:\Visual Studio\ScreenSaver\ScreenSaver\obj\Debug\ScreenSaver.csprojAssemblyReference.cache
+D:\Visual Studio\ScreenSaver\ScreenSaver\obj\Debug\ScreenSaver.Properties.Resources.resources
+D:\Visual Studio\ScreenSaver\ScreenSaver\obj\Debug\ScreenSaver.csproj.GenerateResource.cache
+D:\Visual Studio\ScreenSaver\ScreenSaver\obj\Debug\ScreenSaver.exe
+D:\Visual Studio\ScreenSaver\ScreenSaver\obj\Debug\ScreenSaver.pdb
+D:\Visual Studio\ScreenSaver\ScreenSaver\obj\Debug\ScreenSaver.ScreenSaver.resources
+D:\Visual Studio\ScreenSaver\ScreenSaver\obj\Debug\ScreenSaver.csproj.CoreCompileInputs.cache
