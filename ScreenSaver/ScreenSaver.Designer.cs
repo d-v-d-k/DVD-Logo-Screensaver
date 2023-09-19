@@ -54,7 +54,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ScreenSaver";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Form1";
+            this.Text = "Screen Saver";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.ScreenSaver_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ScreenSaver_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ScreenSaver_MouseDown);

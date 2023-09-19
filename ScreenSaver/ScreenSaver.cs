@@ -6,8 +6,8 @@ namespace ScreenSaver
 {
     public partial class ScreenSaver : Form
     {
-        int tick = 25;
-        int step = 4;
+        int tick = Properties.Settings.Default.Speed; // 25
+        int step = Properties.Settings.Default.Step; // 4
 
         int color;
         int direction;
