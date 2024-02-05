@@ -22,5 +22,17 @@ namespace dvdbounce.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Exit {
+            get {
+                return ((bool)(this["Exit"]));
+            }
+            set {
+                this["Exit"] = value;
+            }
+        }
     }
 }

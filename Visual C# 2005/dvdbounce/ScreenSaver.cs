@@ -57,6 +57,7 @@ namespace dvdbounce
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ScreenSaverForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         private void SetupScreenSaver()
@@ -87,18 +88,24 @@ namespace dvdbounce
                 if ((Math.Abs(MousePosition.X - mouseLocation.X) > 10) ||
                     (Math.Abs(MousePosition.Y - mouseLocation.Y) > 10))
                 {
-                    Application.Exit();
+                    CloseScreenSaver();
                 }
             }
         }
 
         private void ScreenSaverForm_KeyDown(object sender, KeyEventArgs e)
         {
-            Application.Exit();
+            CloseScreenSaver();
         }
 
         private void ScreenSaverForm_MouseDown(object sender, MouseEventArgs e)
         {
+            CloseScreenSaver();
+        }
+
+        void CloseScreenSaver()
+        {
+            Properties.Settings.Default.Exit = true;
             Application.Exit();
         }
 

@@ -63,7 +63,7 @@ namespace dvdbounce
                 index++;
             }
 
-            while (true)
+            while (!Properties.Settings.Default.Exit)
             {
                 for (int i = 0; i < index; i++)
                 {
