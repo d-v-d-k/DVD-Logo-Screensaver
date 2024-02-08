@@ -34,5 +34,27 @@ namespace dvdbounce.Properties {
                 this["Exit"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int Speed {
+            get {
+                return ((int)(this["Speed"]));
+            }
+            set {
+                this["Speed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int Step {
+            get {
+                return ((int)(this["Step"]));
+            }
+            set {
+                this["Step"] = value;
+            }
+        }
     }
 }

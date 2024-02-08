@@ -27,213 +27,169 @@ namespace dvdbounce
         /// </summary>
         private void InitializeComponent()
         {
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.applyButton = new System.Windows.Forms.Button();
-            this.rssGroupBox = new System.Windows.Forms.GroupBox();
-            this.validateButton = new System.Windows.Forms.Button();
-            this.rssFeedLabel = new System.Windows.Forms.Label();
-            this.rssFeedTextBox = new System.Windows.Forms.TextBox();
-            this.imageGroupBox = new System.Windows.Forms.GroupBox();
-            this.browseButton = new System.Windows.Forms.Button();
-            this.backgroundImageFolderTextBox = new System.Windows.Forms.TextBox();
-            this.backgroundImageLabel = new System.Windows.Forms.Label();
-            this.backgroundImageOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.backgroundImageFolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.rssGroupBox.SuspendLayout();
-            this.imageGroupBox.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.gbStep = new System.Windows.Forms.GroupBox();
+            this.tbStep = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.gbSpeed = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbSpeed = new System.Windows.Forms.TrackBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.gbStep.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbStep)).BeginInit();
+            this.gbSpeed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).BeginInit();
             this.SuspendLayout();
             // 
-            // okButton
+            // gbStep
             // 
-            this.okButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.okButton.Location = new System.Drawing.Point(156, 3);
-            this.okButton.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 1;
-            this.okButton.Text = "OK";
-            this.okButton.Click += new System.EventHandler(this.btnOK_Click);
+            this.gbStep.Controls.Add(this.tbStep);
+            this.gbStep.Controls.Add(this.label1);
+            this.gbStep.Controls.Add(this.label2);
+            this.gbStep.Location = new System.Drawing.Point(12, 97);
+            this.gbStep.Name = "gbStep";
+            this.gbStep.Size = new System.Drawing.Size(216, 79);
+            this.gbStep.TabIndex = 7;
+            this.gbStep.TabStop = false;
+            this.gbStep.Text = "Step (pixels)";
             // 
-            // cancelButton
+            // tbStep
             // 
-            this.cancelButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cancelButton.Location = new System.Drawing.Point(74, 3);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(1, 3, 3, 3);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 2;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.Click += new System.EventHandler(this.btnCancel_Click);
+            this.tbStep.LargeChange = 2;
+            this.tbStep.Location = new System.Drawing.Point(8, 32);
+            this.tbStep.Maximum = 8;
+            this.tbStep.Minimum = 1;
+            this.tbStep.Name = "tbStep";
+            this.tbStep.Size = new System.Drawing.Size(200, 45);
+            this.tbStep.TabIndex = 0;
+            this.tbStep.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.tbStep.Value = 4;
+            this.tbStep.Scroll += new System.EventHandler(this.tbStep_Scroll);
             // 
-            // applyButton
+            // label1
             // 
-            this.applyButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.applyButton.Location = new System.Drawing.Point(237, 3);
-            this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(75, 23);
-            this.applyButton.TabIndex = 3;
-            this.applyButton.Text = "Apply";
-            this.applyButton.Click += new System.EventHandler(this.btnApply_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(13, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "1";
             // 
-            // rssGroupBox
+            // label2
             // 
-            this.rssGroupBox.Controls.Add(this.validateButton);
-            this.rssGroupBox.Controls.Add(this.rssFeedLabel);
-            this.rssGroupBox.Controls.Add(this.rssFeedTextBox);
-            this.rssGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rssGroupBox.Location = new System.Drawing.Point(3, 3);
-            this.rssGroupBox.Name = "rssGroupBox";
-            this.rssGroupBox.Size = new System.Drawing.Size(315, 115);
-            this.rssGroupBox.TabIndex = 4;
-            this.rssGroupBox.TabStop = false;
-            this.rssGroupBox.Text = "RSS Feed";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(190, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "8";
             // 
-            // validateButton
+            // gbSpeed
             // 
-            this.validateButton.Location = new System.Drawing.Point(7, 68);
-            this.validateButton.Name = "validateButton";
-            this.validateButton.Size = new System.Drawing.Size(75, 23);
-            this.validateButton.TabIndex = 2;
-            this.validateButton.Text = "Validate";
-            this.validateButton.Click += new System.EventHandler(this.validateButton_Click);
+            this.gbSpeed.Controls.Add(this.label4);
+            this.gbSpeed.Controls.Add(this.tbSpeed);
+            this.gbSpeed.Controls.Add(this.label3);
+            this.gbSpeed.Location = new System.Drawing.Point(12, 12);
+            this.gbSpeed.Name = "gbSpeed";
+            this.gbSpeed.Size = new System.Drawing.Size(216, 79);
+            this.gbSpeed.TabIndex = 6;
+            this.gbSpeed.TabStop = false;
+            this.gbSpeed.Text = "Speed (ms)";
             // 
-            // rssFeedLabel
+            // label4
             // 
-            this.rssFeedLabel.AutoSize = true;
-            this.rssFeedLabel.Location = new System.Drawing.Point(7, 20);
-            this.rssFeedLabel.Name = "rssFeedLabel";
-            this.rssFeedLabel.Size = new System.Drawing.Size(72, 13);
-            this.rssFeedLabel.TabIndex = 1;
-            this.rssFeedLabel.Text = "RSS 2.0 URI:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(182, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "100";
             // 
-            // rssFeedTextBox
+            // tbSpeed
             // 
-            this.rssFeedTextBox.Location = new System.Drawing.Point(7, 41);
-            this.rssFeedTextBox.Name = "rssFeedTextBox";
-            this.rssFeedTextBox.Size = new System.Drawing.Size(301, 20);
-            this.rssFeedTextBox.TabIndex = 0;
-            this.rssFeedTextBox.TextChanged += new System.EventHandler(this.rssFeedTextBox_TextChanged);
+            this.tbSpeed.LargeChange = 25;
+            this.tbSpeed.Location = new System.Drawing.Point(8, 32);
+            this.tbSpeed.Maximum = 100;
+            this.tbSpeed.Minimum = 10;
+            this.tbSpeed.Name = "tbSpeed";
+            this.tbSpeed.Size = new System.Drawing.Size(200, 45);
+            this.tbSpeed.SmallChange = 25;
+            this.tbSpeed.TabIndex = 0;
+            this.tbSpeed.TickFrequency = 25;
+            this.tbSpeed.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.tbSpeed.Value = 25;
+            this.tbSpeed.Scroll += new System.EventHandler(this.tbSpeed_Scroll);
             // 
-            // imageGroupBox
+            // label3
             // 
-            this.imageGroupBox.Controls.Add(this.browseButton);
-            this.imageGroupBox.Controls.Add(this.backgroundImageFolderTextBox);
-            this.imageGroupBox.Controls.Add(this.backgroundImageLabel);
-            this.imageGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.imageGroupBox.Location = new System.Drawing.Point(3, 124);
-            this.imageGroupBox.Name = "imageGroupBox";
-            this.imageGroupBox.Size = new System.Drawing.Size(315, 115);
-            this.imageGroupBox.TabIndex = 5;
-            this.imageGroupBox.TabStop = false;
-            this.imageGroupBox.Text = "Background Image";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "10";
             // 
-            // browseButton
+            // btnCancel
             // 
-            this.browseButton.Location = new System.Drawing.Point(7, 68);
-            this.browseButton.Name = "browseButton";
-            this.browseButton.Size = new System.Drawing.Size(75, 23);
-            this.browseButton.TabIndex = 2;
-            this.browseButton.Text = "Browse...";
-            this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(153, 182);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // backgroundImageFolderTextBox
+            // btnSave
             // 
-            this.backgroundImageFolderTextBox.Location = new System.Drawing.Point(7, 41);
-            this.backgroundImageFolderTextBox.Name = "backgroundImageFolderTextBox";
-            this.backgroundImageFolderTextBox.Size = new System.Drawing.Size(301, 20);
-            this.backgroundImageFolderTextBox.TabIndex = 1;
-            this.backgroundImageFolderTextBox.TextChanged += new System.EventHandler(this.backgroundImageFolderTextBox_TextChanged);
-            // 
-            // backgroundImageLabel
-            // 
-            this.backgroundImageLabel.AutoSize = true;
-            this.backgroundImageLabel.Location = new System.Drawing.Point(7, 20);
-            this.backgroundImageLabel.Name = "backgroundImageLabel";
-            this.backgroundImageLabel.Size = new System.Drawing.Size(166, 13);
-            this.backgroundImageLabel.TabIndex = 0;
-            this.backgroundImageLabel.Text = "Background image directory path:";
-            // 
-            // backgroundImageFolderBrowser
-            // 
-            this.backgroundImageFolderBrowser.RootFolder = System.Environment.SpecialFolder.MyPictures;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.imageGroupBox, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.rssGroupBox, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 9);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(321, 278);
-            this.tableLayoutPanel1.TabIndex = 6;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableLayoutPanel2.Controls.Add(this.applyButton, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.cancelButton, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.okButton, 2, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 245);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(315, 30);
-            this.tableLayoutPanel2.TabIndex = 6;
+            this.btnSave.Location = new System.Drawing.Point(12, 180);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Apply";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 296);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(240, 215);
+            this.ControlBox = false;
+            this.Controls.Add(this.gbStep);
+            this.Controls.Add(this.gbSpeed);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "OptionsForm";
-            this.Padding = new System.Windows.Forms.Padding(9);
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Screen Saver Settings";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.OptionsForm_Load);
-            this.rssGroupBox.ResumeLayout(false);
-            this.rssGroupBox.PerformLayout();
-            this.imageGroupBox.ResumeLayout(false);
-            this.imageGroupBox.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
+            this.gbStep.ResumeLayout(false);
+            this.gbStep.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbStep)).EndInit();
+            this.gbSpeed.ResumeLayout(false);
+            this.gbSpeed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button applyButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.OpenFileDialog backgroundImageOpenFileDialog;
-        private System.Windows.Forms.GroupBox rssGroupBox;
-        private System.Windows.Forms.TextBox rssFeedTextBox;
-        private System.Windows.Forms.GroupBox imageGroupBox;
-        private System.Windows.Forms.Button validateButton;
-        private System.Windows.Forms.Label rssFeedLabel;
-        private System.Windows.Forms.Button browseButton;
-        private System.Windows.Forms.TextBox backgroundImageFolderTextBox;
-        private System.Windows.Forms.Label backgroundImageLabel;
-        private System.Windows.Forms.FolderBrowserDialog backgroundImageFolderBrowser;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.GroupBox gbStep;
+        private System.Windows.Forms.TrackBar tbStep;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox gbSpeed;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TrackBar tbSpeed;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
     }
 }

@@ -1,19 +1,20 @@
 using System;
 using System.Windows.Forms;
 using System.Globalization;
+using Microsoft.Win32; // Registry
 
 namespace dvdbounce
 {
     static class Program
     {
-        static int tick = 10;
-
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main(string[] args)
         {
+            LoadSettings();
+
             if (args.Length > 0)
             {
                 // Get the 2 character command line argument
@@ -43,6 +44,17 @@ namespace dvdbounce
             }
         }
 
+        static void LoadSettings()
+        {
+            //HKU\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Screen Savers\
+            //HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Screen Savers\
+            RegistryKey rk = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Screensavers\DVD Bounce");
+            if (rk == null) rk = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Screensavers\DVD Bounce");
+            Properties.Settings.Default.Speed = Convert.ToInt16(rk.GetValue("Speed", 25));
+            Properties.Settings.Default.Step = Convert.ToInt16(rk.GetValue("Step", 4));
+            rk.Close();
+        }
+
         static void ShowOptions()
         {
             OptionsForm optionsForm = new OptionsForm();
@@ -70,7 +82,7 @@ namespace dvdbounce
                     fScreenSaver[i].MoveLogo();
                     Application.DoEvents();
                 }
-                System.Threading.Thread.Sleep(tick);
+                System.Threading.Thread.Sleep(Properties.Settings.Default.Speed);
             }
 
             Application.Run();

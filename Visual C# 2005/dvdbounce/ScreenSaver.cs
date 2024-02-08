@@ -9,10 +9,9 @@ namespace dvdbounce
         private bool isActive = false;
         private Point mouseLocation;
 
-        int step = 4;
-
         int color;
         int direction;
+        Random random = new Random();
 
         // Blue, Green, Light Blue, Orange, Pink, Purple, Red, Yellow
         Color[] colors = { Color.FromArgb(0, 0, 255), Color.FromArgb(0, 255, 0), Color.FromArgb(0, 255, 255), Color.FromArgb(255, 128, 0), Color.FromArgb(255, 0, 128), Color.FromArgb(128, 0, 255), Color.FromArgb(255, 0, 0), Color.FromArgb(255, 255, 0) };
@@ -66,11 +65,11 @@ namespace dvdbounce
             this.Capture = true;
             Cursor.Hide();
 
-            color = (new Random()).Next(0, colors.Length);
-            direction = (new Random()).Next(0, 4);
+            color = random.Next(0, colors.Length);
+            direction = random.Next(0, 4);
 
-            pbLogo.Top = (new Random()).Next(0, this.Height - pbLogo.Height);
-            pbLogo.Left = (new Random()).Next(0, this.Width - pbLogo.Width);
+            pbLogo.Top = random.Next(0, this.Height - pbLogo.Height);
+            pbLogo.Left = random.Next(0, this.Width - pbLogo.Width);
             pbLogo.BackColor = colors[color];
         }
 
@@ -114,23 +113,23 @@ namespace dvdbounce
             switch (direction)
             {
                 case 0: // Top-Left
-                    pbLogo.Top -= step;
-                    pbLogo.Left -= step;
+                    pbLogo.Top -= Properties.Settings.Default.Step;
+                    pbLogo.Left -= Properties.Settings.Default.Step;
                     break;
 
                 case 1: // Top-Right
-                    pbLogo.Top -= step;
-                    pbLogo.Left += step;
+                    pbLogo.Top -= Properties.Settings.Default.Step;
+                    pbLogo.Left += Properties.Settings.Default.Step;
                     break;
 
                 case 2: // Bottom-Left
-                    pbLogo.Top += step;
-                    pbLogo.Left -= step;
+                    pbLogo.Top += Properties.Settings.Default.Step;
+                    pbLogo.Left -= Properties.Settings.Default.Step;
                     break;
 
                 case 3: // Bottom-Right
-                    pbLogo.Top += step;
-                    pbLogo.Left += step;
+                    pbLogo.Top += Properties.Settings.Default.Step;
+                    pbLogo.Left += Properties.Settings.Default.Step;
                     break;
             }
             CheckForWall();
